@@ -21,10 +21,15 @@ class SecondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        navigationItem.title = "Second VC"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
         view.addSubview(myButton)
         myButton.addTarget(self, action: #selector(didTapBtn), for: .touchUpInside)
     }
 
+    @objc func editTapped() {
+        print("Edit Tapped")
+    }
 
     @objc private func didTapBtn() {
         let vc = UINavigationController(rootViewController: ThirdVC() )
