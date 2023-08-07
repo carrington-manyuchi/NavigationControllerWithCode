@@ -13,6 +13,12 @@ class ThirdVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         navigationItem.title = "Third View Controller"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dismiss", style: UIBarButtonItem.Style.plain, target: self, action: #selector(dismissVC))
+    }
+    
+    
+    @objc func dismissVC() {
+        dismiss(animated: true)
     }
 
 }
