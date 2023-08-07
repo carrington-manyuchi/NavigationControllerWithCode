@@ -3,7 +3,7 @@
 //  NavigationControllerWithCode
 //
 //  Created by DA MAC M1 157 on 2023/08/06.
-//
+//  This tutorial is about knowing how to make your own custom navigation controlllers. Customising colors, images and text etc.
 
 import UIKit
 
@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         button.layer.shadowOffset =  CGSize(width: 3, height: 5)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.8
-        // button.layer.
+        button.layer.borderColor = UIColor.yellow.cgColor
+        button.layer.borderWidth = 1.5
         return button
     }()
 
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.3.fill"), style: .plain, target: self, action: #selector(didTouchPerson))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.3.fill"), style: .plain, target: self, action: #selector(didTouchEmployees))
-        
+        self.navigationItem.largeTitleDisplayMode = .never
         view.addSubview(myButton)
         myButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
